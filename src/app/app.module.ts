@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 
 // *.7 Despues de crear el proyecto en firebase.com importamos:
+// *.10 Muy importante permisos firebase:
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
