@@ -11,7 +11,7 @@ export class MyApp {
   // *.2 Lazy-loading cambio la siguiente linea poniendo cadena "HomePage":
   // *.3 Elimino import de HomePage:
 
-  rootPage:any = "HomePage";
+  rootPage: any = "HomePage";
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

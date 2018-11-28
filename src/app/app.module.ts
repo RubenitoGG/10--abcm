@@ -10,6 +10,7 @@ import { MyApp } from './app.component';
 // *.10 Muy importante permisos firebase:
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { ListaCompraProvider } from '../providers/lista-compra/lista-compra';
 
 // *.8 Completo la constante con lo que copio de firebase.com => miProyecto:
 export const firebaseConfig = {
@@ -46,7 +47,9 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    ListaCompraProvider,
+    ListaCompraProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }
