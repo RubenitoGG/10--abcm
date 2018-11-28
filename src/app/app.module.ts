@@ -6,6 +6,20 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 
+// *.7 Despues de crear el proyecto en firebase.com importamos:
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+// *.8 Completo la constante con lo que copio de firebase.com => miProyecto:
+export const firebaseConfig = {
+  apiKey: "AIzaSyAvUl0KEvHvmx_bQfNi9eFz5-aNXsODuNk",
+  authDomain: "abcm-78581.firebaseapp.com",
+  databaseURL: "https://abcm-78581.firebaseio.com",
+  projectId: "abcm-78581",
+  storageBucket: "abcm-78581.appspot.com",
+  messagingSenderId: "1046683221165"
+};
+
 // *.4 Elimino HomePage de declarations y de EntryComponents:
 // *.5 Elimino import de HomePage:
 // *.6 Descargo librerias de angular/firebase2
@@ -19,7 +33,10 @@ import { MyApp } from './app.component';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    // *.9:
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
