@@ -5,12 +5,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+
+// *.4 Elimino HomePage de declarations y de EntryComponents:
+// *.5 Elimino import de HomePage:
+// *.6 Descargo librerias de angular/firebase2
+// npm install angularfire2 firebase promise-polyfill --save
+// npm install rxjs@6.0 rxjs-compat --save
+// Esta íltima linea para bajar rxjs a v6.0 porque la 6.3.3 funciona mal
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage
+    MyApp
   ],
   imports: [
     BrowserModule,
@@ -18,8 +23,7 @@ import { HomePage } from '../pages/home/home';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage
+    MyApp
   ],
   providers: [
     StatusBar,
