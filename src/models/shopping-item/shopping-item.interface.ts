@@ -1,5 +1,5 @@
 export interface ShoppingItem {
-    $key?: string;
+    key?: string;
     name: string;
     quantity: number;
     price: number;

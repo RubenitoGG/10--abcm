@@ -30,9 +30,16 @@ export class EditItemPage {
   // *.37:
   guardarItem(item: ShoppingItem) {
     this.servicioListaCompra.editItem(item)
-    .then( () => {
-      this.navCtrl.setRoot("HomePage");
-    });
+      .then(() => {
+        this.navCtrl.setRoot("HomePage");
+      });
   }
 
+  // *.40:
+  borrarItem(item: ShoppingItem) {
+    this.servicioListaCompra.deleteItem(item)
+      .then(() => {
+        this.navCtrl.setRoot("HomePage");
+      });
+  }
 }

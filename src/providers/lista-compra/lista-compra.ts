@@ -28,6 +28,11 @@ export class ListaCompraProvider {
 
   // *.35:
   editItem(item: ShoppingItem){
-    return this.refListaCompra.update(item.$key, item);
+    return this.refListaCompra.update(item.key, item);
+  }
+
+  // *.39:
+  deleteItem(item: ShoppingItem){
+    return this.refListaCompra.remove(item.key);
   }
 }
