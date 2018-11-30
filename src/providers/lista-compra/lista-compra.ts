@@ -21,4 +21,13 @@ export class ListaCompraProvider {
     return this.refListaCompra.push(item);
   }
 
+  // *.24:
+  getItemList() {
+    return this.refListaCompra;
+  }
+
+  // *.35:
+  editItem(item: ShoppingItem){
+    return this.refListaCompra.update(item.$key, item);
+  }
 }

@@ -1,0 +1,25 @@
+<!-- *.34 Preparo encabezado: -->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{item.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!-- *.35 Mostramos y editamos la información de un item: -->
+<ion-content padding>
+  <ion-item>
+    <ion-label>Nombre</ion-label>
+    <ion-input [(ngModel)]="item.name" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Cantidad</ion-label>
+    <ion-input [(ngModel)]="item.quantity" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Precio</ion-label>
+    <ion-input [(ngModel)]="item.price" type="number"></ion-input>
+  </ion-item>
+  <button ion-button block clear (click)="guardarItem(item)">Guardar</button>
+</ion-content>

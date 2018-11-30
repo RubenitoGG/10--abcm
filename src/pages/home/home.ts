@@ -1,5 +1,11 @@
+import { ListaCompraProvider } from './../../providers/lista-compra/lista-compra';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+// *.26 Importar lo siguiente:
+import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators';
+import { ShoppingItem } from './../../models/shopping-item/shopping-item.interface';
+
 
 /**
  * Generated class for the HomePage page.
@@ -15,11 +21,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  // *.27:
+  listaCompra: Observable<ShoppingItem[]>;
+
+  // *.25 Inyectar ListaCompraProvider:
+  constructor(public navCtrl: NavController, public navParams: NavParams, private shopping: ListaCompraProvider) {
+
+    // *.28 Referencia https://github.com/angular/angularfire2/blob/master/docs/rtdb/lists.md
+    this.listaCompra = this.shopping
+      .getItemList() // Devuelve la DB LIST.
+      .snapshotChanges() // Valores.
+      .pipe(map(changes => {
+        return changes.map(
+          c => ({
+            key: c.payload.key,
+            ...c.payload.val(),
+          })
+        )
+      }
+      ))
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
+  // *.31 Método que atiende el evento click:
+  selectShoppingItem(shoppingItem: ShoppingItem) {
+    this.navCtrl.push("EditItemPage", { "item": shoppingItem });
   }
 
 }
