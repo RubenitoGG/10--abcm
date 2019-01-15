@@ -27,7 +27,7 @@ export const firebaseConfig = {
 // *.6 Descargo librerias de angular/firebase2
 // npm install angularfire2 firebase promise-polyfill --save
 // npm install rxjs@6.0 rxjs-compat --save
-// Esta íltima linea para bajar rxjs a v6.0 porque la 6.3.3 funciona mal
+// Esta última linea para bajar rxjs a v6.0 porque la 6.3.3 funciona mal
 
 @NgModule({
   declarations: [
